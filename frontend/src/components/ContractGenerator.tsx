@@ -13,7 +13,7 @@ import ContractDisplay from "./ContractDisplay";
 import { ContractType, BusinessContext } from "../types";
 
 interface ContractData {
-  contractId: string;
+  contract_id: string;
   contractType: ContractType;
   sections: any[];
   totalSections: number;
@@ -149,11 +149,7 @@ const ContractGenerator: React.FC = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          businessContext: contractData.businessContext,
-          contractType: contractData.contractType,
-          customSections: [],
-          language: "en",
-          jurisdiction: "",
+          contract_id: contractData.contract_id,
         }),
       });
 
@@ -165,7 +161,7 @@ const ContractGenerator: React.FC = () => {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `contract_${contractData.contractType}_${contractData.contractId}.html`;
+      a.download = `contract_${contractData.contractType}_${contractData.contract_id}.html`;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);

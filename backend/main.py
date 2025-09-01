@@ -236,7 +236,7 @@ async def generate_contract_stream(req_context: Request, request: ContractGenera
                         model_used=ai_client.model
                     )
                 # Send completion signal with contract ID
-                yield f"[END_OF_DOC={contract_id}]"
+                yield f"[END_OF_DOC={contract_id}"
                 
             except Exception as e:
                 logger.error(f"Streaming error: {str(e)}")
