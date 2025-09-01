@@ -4,11 +4,8 @@ import { ContractType, BusinessContext } from "../types";
 
 interface ContractFormProps {
   onSubmit: (formData: {
-    businessContext: BusinessContext;
-    contractType: ContractType;
-    customSections: string[];
-    language: string;
-    jurisdiction: string;
+    business_context: BusinessContext;
+    contract_type: ContractType;
   }) => void;
   isGenerating: boolean;
   onStop: () => void;
@@ -20,9 +17,7 @@ const ContractForm: React.FC<ContractFormProps> = ({
   onStop,
 }) => {
   const [businessDescription, setBusinessDescription] = useState("");
-  const [contractType, setContractType] = useState<ContractType>(
-    ContractType.TERMS_OF_SERVICE
-  );
+  const [contractType] = useState<ContractType>(ContractType.TERMS_OF_SERVICE);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

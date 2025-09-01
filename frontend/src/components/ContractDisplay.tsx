@@ -1,5 +1,5 @@
 import React from "react";
-import { FileText, Clock, Hash, User } from "lucide-react";
+import { FileText, Clock, Hash } from "lucide-react";
 
 interface ContractDisplayProps {
   content: string;

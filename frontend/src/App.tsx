@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ContractGenerator from "./components/ContractGenerator";
 import Header from "./components/Header";
 import Footer from "./components/Footer";

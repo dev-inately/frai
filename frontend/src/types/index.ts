@@ -9,9 +9,6 @@ export enum ContractType {
 
 export interface BusinessContext {
   description: string;
-  industry?: string;
-  location?: string;
-  company_size?: string;
 }
 
 export interface ContractGenerationRequest {

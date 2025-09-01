@@ -1,13 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import {
-  Play,
-  Square,
-  Download,
-  FileText,
-  Building2,
-  MapPin,
-  Users,
-} from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Download, FileText, Building2, MapPin, Users } from "lucide-react";
 import ContractForm from "./ContractForm";
 import ContractDisplay from "./ContractDisplay";
 import { ContractType, BusinessContext } from "../types";
@@ -31,8 +23,8 @@ const ContractGenerator: React.FC = () => {
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const handleGenerateContract = async (formData: {
-    businessContext: BusinessContext;
-    contractType: ContractType;
+    business_context: BusinessContext;
+    contract_type: ContractType;
   }) => {
     setIsGenerating(true);
     setError(null);
