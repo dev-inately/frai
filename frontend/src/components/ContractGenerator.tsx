@@ -16,6 +16,8 @@ interface ContractData {
 }
 
 const ContractGenerator: React.FC = () => {
+  const API_URL =
+    process.env.VITE_API_URL || "https://frai-frontend.onrender.com/";
   const [isGenerating, setIsGenerating] = useState(false);
   const [contractData, setContractData] = useState<ContractData | null>(null);
   const [streamingContent, setStreamingContent] = useState("");
@@ -35,7 +37,7 @@ const ContractGenerator: React.FC = () => {
     abortControllerRef.current = new AbortController();
 
     try {
-      const response = await fetch("/api/generate-contract", {
+      const response = await fetch(`${API_URL}/api/generate-contract`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,7 +103,7 @@ const ContractGenerator: React.FC = () => {
 
   const getFullContract = async (contract_id: string) => {
     try {
-      const response = await fetch("/api/generate-contract-full", {
+      const response = await fetch(`${API_URL}/api/generate-contract-full`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -135,7 +137,7 @@ const ContractGenerator: React.FC = () => {
     if (!contractData) return;
     console.log("Contract Data", contractData);
     try {
-      const response = await fetch("/api/download-contract", {
+      const response = await fetch(`${API_URL}/api/download-contract`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

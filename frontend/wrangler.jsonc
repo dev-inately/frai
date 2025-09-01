@@ -4,5 +4,9 @@
     "compatibility_date": "2025-06-08",
     "assets": {
       "directory": "./dist"
+    },
+    "vars": {
+    "API_BASE_URL": "https://frai.onrender.com",
+    "VITE_API_URL": "https://frai.onrender.com"
     }
 }
