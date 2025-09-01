@@ -16,8 +16,7 @@ interface ContractData {
 }
 
 const ContractGenerator: React.FC = () => {
-  const API_URL =
-    process.env.VITE_API_URL || "https://frai-frontend.onrender.com/";
+  const API_URL = process.env.VITE_API_URL || "https://frai.onrender.com/";
   const [isGenerating, setIsGenerating] = useState(false);
   const [contractData, setContractData] = useState<ContractData | null>(null);
   const [streamingContent, setStreamingContent] = useState("");
